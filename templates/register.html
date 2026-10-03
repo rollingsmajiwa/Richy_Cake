@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card max-w-sm mx-auto">
+    <h1 class="text-xl font-bold mb-4">Register</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn">Sign Up</button>
+
+    </form>
+
+</div>
+
+{% endblock %}
