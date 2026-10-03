@@ -1,12 +1,8 @@
-from django.db import models
-from cloudinary.models import CloudinaryField
+from django import forms
+from richy_cake_app.models import Cake
 
-class Cake(models.Model):
-    image = CloudinaryField("image")
-    name = models.TextField(max_length=100)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.name
+class CakeForm(forms.ModelForm):
+    class Meta:
+        model = Cake
+        fields = ["name", "description", "price", "image"]
