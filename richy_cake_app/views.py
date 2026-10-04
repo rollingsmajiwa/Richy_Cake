@@ -6,11 +6,14 @@ from django.contrib.auth import login, authenticate
 
 # Create your views here.
 def index(request):
+    return render(request, "index.html")
+
+def cake_page(request):
     try:
         cake = Cake.objects.all()
     except Exception as e:
         print(e)
-    return render(request, "index.html", {"cake_list": cake})
+    return render(request, "cake.html", {"cake_list": cake})
 
 # register views
 

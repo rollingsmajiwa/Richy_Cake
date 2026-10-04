@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Available Cakes</h1>
+<div class="grid md:grid-cols-3 gap-6 ">
+  {% for cake in cake_list %} <div class="card mb-4">
+    <a href="{% url 'cake_details' cake.id %}">View Details
+        <img src="{{cake.image.url}}" class="w-full h-40 object-cover mb-3 rounded-md">
+        <h2 class="font-semibold ">{{ cake.name|title}}</h2>
+        <p class="text-sm text-gray-300">{{ cake.price}}</p>
+    </a>
+    {% empty %}
+    <p>No Cake available yet!</p>
+  </div> {% endfor %}   
+    
+
+</div>
+
+{% endblock %}
