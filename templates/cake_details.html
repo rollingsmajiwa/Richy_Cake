@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="card mb-4">
+    
+        <img src="{{cake.image.url}}" class="w-full h-40 object-cover mb-4 rounded-md">
+        <h2 class=" text-2xl  font-bold ">{{ cake.name|title}}</h2>
+        <p class="text-sm text-gray-500 mb-5"> KES{{ cake.price}}</p>
+        <p class="text-sm text-gray-300">{{ cake.description }}</p>  
+</div> 
+    
+
+
+{% endblock %}

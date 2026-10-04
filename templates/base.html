@@ -31,8 +31,11 @@
     <nav class="w-full bg-cake-red text-white py-2 flex justify-between">
         <a href="{% url 'index_page' %}"><span class="text-white font-black text-xl">Richie</span><span class="text-black font-black text-xl">Cake</span></a>
         <div class=" font-medium text-md">
+            <a href="{% url 'add_cake' %}" class="hover:underline mr-1">Admin</a>
+            <a href="{% url 'cake_page' %}" class="hover:underline mr-1">Our Cakes</a>
             <a href="{% url 'register' %}" class="hover:underline mr-5">Sign Up</a>
              <a href="{% url 'login' %}" class="hover:underline mr-1">Sign In</a>
+             
             
         </div>
     </nav>

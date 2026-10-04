@@ -23,6 +23,9 @@ def add_cake(request):
     else:
         form = CakeForm()
     return render(request, 'add_cake.html', {"form": form})
+def cake_details(request, pk):
+    cake = get_object_or_404(Cake, pk=pk)
+    return render(request, "cake_details.html", {"cake": cake})
 
 # register views
 
