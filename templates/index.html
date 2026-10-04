@@ -1,1 +1,44 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="bg-cake-cream py-12 md:py-20 px-6 overflow-hidden">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+    
+    <div class="lg:col-span-6 flex flex-col justify-center">
+      <div class="flex items-center gap-2 text-cake-rose text-xs font-semibold tracking-wider uppercase mb-4">
+        <span>A little slice of happiness</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-serif text-cake-dark mb-6 font-normal">
+        Life's sweeter with a little <span class="text-cake-rose font-medium">Richie's Cake</span>
+      </h1>
+
+      <p class="text-cake-taupe text-base md:text-lg max-w-md mb-8">
+        For the big milestones and the just-because moments. Beautiful cakes, baked from scratch and made to be shared.
+      </p>
+     
+
+
+      <div class="flex flex-wrap items-center gap-4 mb-8">
+        <a href="#" class="inline-flex items-center gap-2 bg-cake-red hover:bg-cake-rose text-white text-sm font-medium px-6 py-3.5 rounded-full transition shadow-sm">
+          <span>Explore our cakes</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-2 border border-[#E3D8C8] hover:bg-[#E3D8C8]/30 text-[#2E1C1A] text-sm font-medium px-6 py-3.5 rounded-full transition">
+          <span>Customize your own</span>
+        </a>
+      </div>
+
+    </div>
+    <div class=" col-span-12 md:col-span-12 lg:col-span-6 relative flex justify-center lg:justify-end">
+        <div class="col-span-6 max-w-md h-[460px] md:h-[520px] rounded-t-full overflow-hidden shadow-lg bg-[#E3D8C8]">
+        <img 
+          src="{% static 'images/herocake.jpg' %}" 
+          alt="Vintage styled cake" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+  </div>
+</section>
+{% endblock %}

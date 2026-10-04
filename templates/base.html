@@ -14,25 +14,33 @@
     <style type="text/tailwindcss">
         @theme {
             --color-cake-red: #B82A2A;
-            --color-cake-red-hover: #9E2A2B;
+            --color-cake-rose: #9E2A2B;
             --color-cake-dark: #2E1C1A;
             --color-cake-taupe: #6E5A56;
             --color-cake-cream: #F8F5EE;
             --color-cake-sand: #E3D8C8;
+            --color-cake-choco: #3A2320;
+             --color-cake-brown: #8988C;
+            
+            
+            
   }
 </style>
 </head>
 <body class="bg-cake-cream min-h-screen">
-    {% block content %}
     <nav class="w-full bg-cake-red text-white py-2 flex justify-between">
         <a href="{% url 'index_page' %}"><span class="text-white font-black text-xl">Richie</span><span class="text-black font-black text-xl">Cake</span></a>
-        <div class=" font-bold text-lg">
+        <div class=" font-medium text-md">
             <a href="{% url 'register' %}" class="hover:underline mr-5">Sign Up</a>
-             <a href="{% url 'login' %}" class="hover:underline">Sign In</a>
+             <a href="{% url 'login' %}" class="hover:underline mr-1">Sign In</a>
             
         </div>
     </nav>
-    {% endblock %}
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
     
 </body>
 </html>
