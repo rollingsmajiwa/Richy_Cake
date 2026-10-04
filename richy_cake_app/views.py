@@ -14,6 +14,15 @@ def cake_page(request):
     except Exception as e:
         print(e)
     return render(request, "cake.html", {"cake_list": cake})
+def add_cake(request):
+    if request.method == "POST":
+        form = CakeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('cake_page')
+    else:
+        form = CakeForm()
+    return render(request, 'add_cake.html', {"form": form})
 
 # register views
 

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card max-w-sm mx-auto">
+    <h1 class="text-xl font-bold mb-4">Add a Cake</h1>
+    <form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn">Add Cake</button>
+
+    </form>
+
+</div>
+
+{% endblock %}
