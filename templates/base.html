@@ -28,17 +28,79 @@
 </style>
 </head>
 <body class="bg-cake-cream min-h-screen">
-    <nav class="w-full bg-cake-red text-white py-2 flex justify-between">
-        <a href="{% url 'index_page' %}"><span class="text-white font-black text-xl">Richie</span><span class="text-black font-black text-xl">Cake</span></a>
-        <div class=" font-medium text-md">
-            <a href="{% url 'add_cake' %}" class="hover:underline mr-1">Admin</a>
-            <a href="{% url 'cake_page' %}" class="hover:underline mr-1">Our Cakes</a>
-            <a href="{% url 'register' %}" class="hover:underline mr-5">Sign Up</a>
-             <a href="{% url 'login' %}" class="hover:underline mr-1">Sign In</a>
-             
-            
-        </div>
-    </nav>
+
+    <nav class="bg-cake-red text-white border-b border-red-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+     
+      <div class="flex items-center space-x-3">
+        <a href="{% if user.is_authenticated %}{% url 'cake_page' %}
+        {% else %}
+        {% url 'index_page' %}
+        {% endif %}" 
+           class="flex items-center space-x-2 font-bold text-xl tracking-wide transition">
+          <span class="text-white font-serif">Richy<span class="text-black">Cakes</span></span>
+        </a>
+      </div>
+
+     
+    
+
+      
+      <div class="flex items-center space-x-4">
+        {% if user.is_authenticated %}
+          
+          <span class="text-sm font-medium text-gray-300 hidden sm:inline">
+            Welcome, <span class="text-red-400 font-semibold">{{ user.username }}</span>
+          </span>
+
+          
+          <a href="{% url 'cake_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">
+            Our Cakes
+          </a>
+
+          {% if user.is_superuser %}
+            <a href="{% url 'admin_dashboard' %}" class="px-3 py-2 text-sm font-medium text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-md transition">
+              Admin
+            </a>
+          {% endif %}
+
+          
+          <a href="{% if user.profile %}{% url 'profile_view' user.id %}{% else %}#{% endif %}" class="flex items-center hover:opacity-80 transition" title="View Profile">
+            {% if user.profile.profile_pic %}
+              <img src="{{ user.profile.profile_pic.url }}" 
+                   alt="{{ user.username }}" 
+                   class="w-9 h-9 rounded-full object-cover border-2 border-red-500 shadow-sm">
+            {% else %}
+              <div class="w-9 h-9 rounded-full bg-red-600 text-white font-semibold flex items-center justify-center text-sm border-2 border-red-400">
+                {{ user.username|first|upper }}
+              </div>
+            {% endif %}
+          </a>
+
+         
+          <form method="post" action="{% url 'logout' %}" class="inline">
+            {% csrf_token %}
+            <button type="submit" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-white bg-red-700 hover:bg-red-600 rounded-lg transition">
+              Logout
+            </button>
+          </form>
+
+        {% else %}
+        
+          <a href="{% url 'login' %}" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-red-400 transition">
+            Log In
+          </a>
+          <a href="{% url 'register' %}" class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg shadow-md transition transform active:scale-95">
+            Sign Up
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</nav>
     <main>
         {% block content %}
         

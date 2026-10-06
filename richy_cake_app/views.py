@@ -3,11 +3,12 @@ from richy_cake_app.models import Cake
 from richy_cake_app.forms import CakeForm, UserRegisterForm, CustomLoginForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
     return render(request, "index.html")
-
+@login_required
 def cake_page(request):
     try:
         cake = Cake.objects.all()
