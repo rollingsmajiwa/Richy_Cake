@@ -33,7 +33,7 @@ def cake_details(request, pk):
 def register(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Account created for {username}")
@@ -41,7 +41,7 @@ def register(request):
 
     else:
         form = UserRegisterForm()
-        return render(request, "register.html", {"form": form})
+    return render(request, "register.html", {"form": form})
 def custom_login(request):
     if request.user.is_authenticated:
         return redirect("index_page")
@@ -59,13 +59,13 @@ def custom_login(request):
                 messages.success(request, f"Welcome Back, {username}")
                 return redirect("index_page")
             else:
-                messages.error("Invalid username or password")
+                messages.error(request, "Invalid username or password")
         else:
-            messages.error("Please correct errors in the form")
+            messages.error(request, "Please correct errors in the form")
 
     else:
         form = CustomLoginForm()
-        return render(request, "login.html", {"form": form})
+    return render(request, "login.html", {"form": form})
         
 
 
