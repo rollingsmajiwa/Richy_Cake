@@ -56,7 +56,7 @@ def custom_login(request):
             user = authenticate(username=username, password=password)
 
             if user is not None:
-                login(request, user)
+                auth_login(request, user)
                 messages.success(request, f"Welcome Back, {username}")
                 return redirect("index_page")
             else:
