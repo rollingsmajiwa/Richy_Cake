@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
+
+
 {% block content %}
+{% if messages %}
+  <div class="messages-container" style="max-width: 500px; margin: 15px auto;">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}" style="padding: 12px; margin-bottom: 10px; border-radius: 6px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 <div class="card max-w-sm mx-auto">
     <h1 class="text-xl font-bold mb-4">Sign In</h1>
     <form method="POST">
