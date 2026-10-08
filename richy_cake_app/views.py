@@ -16,6 +16,7 @@ def cake_page(request):
     except Exception as e:
         print(e)
     return render(request, "cake.html", {"cake_list": cake})
+
 @staff_member_required
 def add_cake(request):
     if request.method == "POST":
