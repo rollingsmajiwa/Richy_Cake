@@ -4,6 +4,7 @@ from richy_cake_app.forms import CakeForm, UserRegisterForm, CustomLoginForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 # Create your views here.
 def index(request):
@@ -15,6 +16,7 @@ def cake_page(request):
     except Exception as e:
         print(e)
     return render(request, "cake.html", {"cake_list": cake})
+@staff_member_required
 def add_cake(request):
     if request.method == "POST":
         form = CakeForm(request.POST, request.FILES)

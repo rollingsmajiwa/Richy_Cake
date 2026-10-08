@@ -60,7 +60,9 @@
             Our Cakes
           </a>
 
-         
+          <a href="{% url 'add_cake' %}" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-red-400 transition">
+            Admin
+          </a>
           <form method="post" action="{% url 'logout' %}" class="inline">
             {% csrf_token %}
             <button type="submit" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-white bg-red-700 hover:bg-red-600 rounded-lg transition">
@@ -79,9 +81,7 @@
           <a href="{% url 'register' %}" class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg shadow-md transition transform active:scale-95">
             Sign Up
           </a>
-          <a href="{% url 'add_cake' %}" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-red-400 transition">
-            Admin
-          </a>
+         
         {% endif %}
       </div>
 
