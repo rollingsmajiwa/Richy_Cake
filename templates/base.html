@@ -79,6 +79,9 @@
           <a href="{% url 'register' %}" class="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 rounded-lg shadow-md transition transform active:scale-95">
             Sign Up
           </a>
+          <a href="{% url 'add_cake' %}" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-red-400 transition">
+            Admin
+          </a>
         {% endif %}
       </div>
 
@@ -136,7 +139,7 @@
         Richie's Cake.
       </h1>
       <p class="text-xs text-gray-400">
-        Rollings Majiwa &copy; {% now "Y" %} Richie's Cake. All rights reserved.
+        Rollings Majiwa &copy; {% now "Y" %}. All rights reserved.
       </p>
     </div>
 
