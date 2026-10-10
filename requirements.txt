@@ -9,6 +9,7 @@ djangorestframework==3.18.3
 git-filter-repo==2.47.0
 gunicorn==26.2.0
 idna==3.20
+pillow==12.3.0
 psycopg2-binary==2.9.13
 python-dotenv==1.2.4
 requests==2.34.2
