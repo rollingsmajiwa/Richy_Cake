@@ -121,7 +121,8 @@ STATICFILES_DIRS = [
 
 # Media files & Cloudinary Storage Settings
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_URL = "login"
 
 STORAGES = {
     "default": {
