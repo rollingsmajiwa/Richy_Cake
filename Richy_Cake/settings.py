@@ -33,9 +33,9 @@ ALLOWED_HOSTS = ["*"]
 
 # Cloudinary Configuration
 cloudinary.config( 
-    cloud_name = os.getenv("CD_CLOUD_NAME"), 
-    api_key = os.getenv("CD_KEY"), 
-    api_secret = os.getenv("CD_SECRET")
+    cloud_name = os.getenv("CD_CLOUD_NAME") or os.getenv("CLOUDINARY_CLOUD_NAME"), 
+    api_key = os.getenv("CD_KEY") or os.getenv("CLOUDINARY_API_KEY"), 
+    api_secret = os.getenv("CD_SECRET") or os.getenv("CLOUDINARY_API_SECRET")
 )
 
 # Application definition
