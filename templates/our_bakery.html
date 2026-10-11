@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+        <h1 class="text-4xl font-extrabold text-red-800 tracking-tight mb-3">Inside Our Bakery</h1>
+        <p class="text-lg text-gray-600">Where the magic happens every morning before sunrise.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-red-800 mb-2">Daily Freshness</h3>
+            <p class="text-gray-600 text-sm">Our mixers start spinning before dawn to ensure every pastry and cake layer hits your table fresh.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-red-800 mb-2">Artisan Craftsmanship</h3>
+            <p class="text-gray-600 text-sm">Our bakers combine traditional baking techniques with custom modern decorating artistry.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-red-800 mb-2">Quality Ingredients</h3>
+            <p class="text-gray-600 text-sm">No artificial shortcuts—just pure butter, rich chocolates, fresh fruit, and premium vanilla.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

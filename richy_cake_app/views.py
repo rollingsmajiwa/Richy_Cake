@@ -9,6 +9,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 # Create your views here.
 def index(request):
     return render(request, "index.html")
+def our_bakery(request):
+    return render(request, "our_bakery.html")
 @login_required
 def cake_page(request):
     try:
