@@ -13,6 +13,8 @@ def our_bakery(request):
     return render(request, "our_bakery.html")
 def about_us(request):
     return render(request, "about_us.html")
+def contact(request):
+    return render(request, "contact.html")
 @login_required
 def cake_page(request):
     try:
