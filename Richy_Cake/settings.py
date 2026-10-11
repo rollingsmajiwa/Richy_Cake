@@ -32,6 +32,13 @@ DEBUG = 'RENDER' not in os.environ
 ALLOWED_HOSTS = ["*"]
 
 # Cloudinary Configuration
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv("CD_CLOUD_NAME") or os.getenv("CLOUDINARY_CLOUD_NAME"),
+    'API_KEY': os.getenv("CD_KEY") or os.getenv("CLOUDINARY_API_KEY"),
+    'API_SECRET': os.getenv("CD_SECRET") or os.getenv("CLOUDINARY_API_SECRET"),
+}
+
 cloudinary.config( 
     cloud_name = os.getenv("CD_CLOUD_NAME") or os.getenv("CLOUDINARY_CLOUD_NAME"), 
     api_key = os.getenv("CD_KEY") or os.getenv("CLOUDINARY_API_KEY"), 
@@ -40,13 +47,13 @@ cloudinary.config(
 
 # Application definition
 INSTALLED_APPS = [
-    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'richy_cake_app',  
 ]
@@ -113,7 +120,7 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'richy_cake_app' / 'static',
