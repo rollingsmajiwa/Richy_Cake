@@ -1,0 +1,18 @@
+
+{% load static %}
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 class="text-4xl font-extrabold text-red-800 tracking-tight mb-4">About Richie's Cake</h1>
+            <p class="text-lg text-gray-600 mb-6">Crafting sweet memories, one custom creation at a time.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Richie's Cakes was born from a deep passion for baking and a commitment to making every celebration extraordinary. From birthdays and weddings to intimate just-because moments, we use only real butter, fresh eggs, and premium ingredients to bake everything fresh from scratch every single morning.
+            </p>
+        </div>
+        <div>
+            <img src="{% static 'images/about.jpg' %}" alt="Richie's Cakes" class="rounded-xl shadow-lg w-full object-cover h-96">
+        </div>
+    </div>
+</div>
+{% endblock %}

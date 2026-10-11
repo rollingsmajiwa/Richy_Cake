@@ -57,6 +57,7 @@
           <a href="{% url 'index_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">
             Home
           </a>
+          <a href="{% url 'about_us_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">About Us</a>
           
           <a href="{% url 'our_bakery_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">
             Our Bakery
@@ -75,6 +76,11 @@
         {% else %}
         <a href="{% url 'cake_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">
             Our Cakes
+          </a>
+          <a href="{% url 'about_us_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">About Us</a>
+          
+          <a href="{% url 'our_bakery_page' %}" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition">
+            Our Bakery
           </a>
         
           <a href="{% url 'login' %}" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-red-400 transition">
@@ -117,7 +123,7 @@
       <div>
         <h5 class="font-bold text-xs uppercase tracking-wider text-gray-400 mb-4">Company</h5>
         <ul class="space-y-2 text-xs">
-          <li><a href="#" class="hover:text-red-600">About Us</a></li>
+          <li><a href="{% url 'about_us_page' %}" class="hover:text-red-600">About Us</a></li>
           <li><a href="#" class="hover:text-red-600">Our Bakery</a></li>
           <li><a href="#" class="hover:text-red-600">Reviews</a></li>
           <li><a href="#" class="hover:text-red-600">Contact Us</a></li>

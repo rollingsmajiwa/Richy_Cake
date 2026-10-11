@@ -11,6 +11,8 @@ def index(request):
     return render(request, "index.html")
 def our_bakery(request):
     return render(request, "our_bakery.html")
+def about_us(request):
+    return render(request, "about_us.html")
 @login_required
 def cake_page(request):
     try:
